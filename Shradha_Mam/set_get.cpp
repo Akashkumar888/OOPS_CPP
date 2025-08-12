@@ -1,4 +1,5 @@
 
+
 #include<iostream>
 #include<string>
 using namespace std;
@@ -16,6 +17,14 @@ string subject;
 void changeDept(string newDept){
   dept=newDept;
 }
+// setter
+void setSalary(double sal){
+  salary=sal;
+}
+// getter
+double getSalary(){
+  return salary;
+}
 
 };
 int main()
@@ -23,8 +32,8 @@ int main()
  Teacher t1;
  t1.dept="ECE";
  t1.changeDept("CSE");
- t1.name="Akash kumar";
- t1.subject="Artificial Intelligience";
- cout<<t1.name<<" "<<t1.dept<<" "<<" "<<t1.subject<<endl;
+ t1.setSalary(23000);
+ cout<<t1.dept<<" "<<t1.getSalary()<<endl;
 return 0;
 }
+
