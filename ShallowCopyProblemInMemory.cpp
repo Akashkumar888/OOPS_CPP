@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -11,20 +10,17 @@ public:
     Student(string name, float cgpa) {
         this->name = name;
         cgpaPtr = new float;      // allocate memory
-        *cgpaPtr = cgpa;          // copy the value
+        *cgpaPtr = cgpa;          
     }
 
     // Copy constructor (deep copy)
     Student(Student &orgObj) {
         this->name = orgObj.name;
-        this->cgpaPtr = new float;     // allocate new memory
-        *this->cgpaPtr = *orgObj.cgpaPtr;  // copy the value
+        this->cgpaPtr=(orgObj.cgpaPtr);  
+//         Here you are only copying the address stored in orgObj.cgpaPtr.
+// So both objects (s1 and s2) end up pointing to the same memory location.
     }
 
-    // Destructor
-    ~Student() {
-        delete cgpaPtr;   // free memory
-    }
 
     void getInfo() {
         cout << "Name: " << name << endl;
@@ -36,16 +32,10 @@ int main() {
     Student s1("Akash", 7.35);
 
     Student s2(s1); 
-    s1.getInfo();        
     s2.getInfo();
 
-    *s2.cgpaPtr = 9.5;   // only s2 changes
-    s2.name="Neha";
-    cout<<"After changing the s2 value"<<endl;
-    s1.getInfo();        // s1 remains unchanged
-    s2.getInfo();        // s2 
-
+    *s2.cgpaPtr = 9.5;// modifies s1.cgpaPtr as well, since both point to same memory
+    s1.getInfo();   
+    // This is called a shallow copy → only the pointer’s address is copied, not the actual data.
     return 0;
 }
-
-
