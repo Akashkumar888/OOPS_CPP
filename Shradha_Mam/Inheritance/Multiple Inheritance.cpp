@@ -1,4 +1,8 @@
 
+
+// ✅ 3. Multiple Inheritance
+// Child class inherits from multiple parents.
+
 #include <iostream>
 using namespace std;
 
@@ -23,4 +27,3 @@ int main() {
     obj.showB();
     obj.showC();
 }
-

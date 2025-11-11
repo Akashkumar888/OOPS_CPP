@@ -1,4 +1,7 @@
 
+// ✅ 4. Hierarchical Inheritance
+// One parent → multiple children.
+
 #include <iostream>
 using namespace std;
 

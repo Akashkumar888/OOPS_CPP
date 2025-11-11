@@ -1,4 +1,7 @@
 
+// ✅ 5. Hybrid Inheritance
+// Combination of multiple + multilevel + hierarchical.
+
 #include <iostream>
 using namespace std;
 

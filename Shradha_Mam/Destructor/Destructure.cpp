@@ -7,22 +7,21 @@ public:
     string name;
     float* cgpaPtr;
 
+    // Student() {
+    //   cout<<"Hi, i am constructor"<<endl;
+    // }
+
     // Parameterized constructor
-    Student(string name, float cgpa) {
+    Student(string name, float cgpa) { // this constructor called s1 create with parametrized 
         this->name = name;
         cgpaPtr = new float;      // allocate memory
         *cgpaPtr = cgpa;          // copy the value
-    }
-
-    // Copy constructor (deep copy)
-    Student(Student &orgObj) {
-        this->name = orgObj.name;
-        this->cgpaPtr = new float;     // allocate new memory
-        *this->cgpaPtr = *orgObj.cgpaPtr;  // copy the value
+        cout<<"Hi, i am parametrized constructor"<<endl;
     }
 
     // Destructor
     ~Student() {
+      cout<<"Hi, i am destructor"<<endl;
         delete cgpaPtr;   // free memory
     }
 
@@ -34,18 +33,12 @@ public:
 
 int main() {
     Student s1("Akash", 7.35);
-
-    Student s2(s1); 
-    s1.getInfo();        
+    s1.getInfo(); 
+    Student s2("Ankit", 9.00);       
     s2.getInfo();
-
-    *s2.cgpaPtr = 9.5;   // only s2 changes
-    s2.name="Neha";
-    cout<<"After changing the s2 value"<<endl;
-    s1.getInfo();        // s1 remains unchanged
-    s2.getInfo();        // s2 
-
+//     At the end of main(), destructors are called automatically in reverse order of creation:
+// First s2 is destroyed → destructor prints:
+// Then s1 is destroyed → destructor prints:
     return 0;
 }
-
 

@@ -1,4 +1,7 @@
 
+// ✅ 2. Multilevel Inheritance
+// Parent → Child → Grandchild.
+
 #include <iostream>
 using namespace std;
 
@@ -12,7 +15,7 @@ public:
     void showP() { cout << "Parent" << endl; }
 };
 
-class Child : public Parent {
+class Child : public Parent { // Multilevel inheritance
 public:
     void showC() { cout << "Child" << endl; }
 };

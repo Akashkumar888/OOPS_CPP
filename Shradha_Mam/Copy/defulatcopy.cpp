@@ -1,3 +1,12 @@
+// ✅ 1. DEFAULT COPY (Compiler-Generated Copy Constructor)
+// Theory (Very Important for Interview)
+// If you do NOT write a copy constructor, the compiler creates a default copy constructor.
+// This default constructor performs member-wise copy.
+// For normal data types → works correctly
+// For pointers → shallow copy happens, meaning both objects point to the same memory.
+// ✅ Example: Default Copy Constructor (Shallow Copy)
+
+
 #include<iostream>
 #include<string.h>
 using namespace std;

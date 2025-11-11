@@ -1,4 +1,7 @@
 
+// ✅ Operator Overloading
+// Giving a new meaning to operators (like +, -, ==) for user-defined types.
+
 #include <iostream>
 using namespace std;
 
