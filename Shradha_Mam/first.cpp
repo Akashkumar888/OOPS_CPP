@@ -67,3 +67,84 @@ int main()
  cout<<t1.name<<" "<<t1.dept<<" "<<" "<<t1.subject<<endl;
 return 0;
 }
+
+
+// 🧠 OOP Terminology in C++
+// TERM	MEANING
+// Data Members	Variables inside a class
+// Member Functions	Functions inside a class
+// Methods	Another name for Member Functions (same thing)
+// 🟢 1️⃣ DATA MEMBERS (also called Attributes / Fields)
+// ➡ These are variables declared inside a class.
+// They store object data.
+// Example
+class Student {
+public:
+    string name;   // data member
+    int age;       // data member
+};
+
+// 🔵 2️⃣ MEMBER FUNCTIONS (also called Methods)
+// ➡ These are functions declared inside a class.
+// They operate on data members.
+// Example
+class Student {
+public:
+    string name;
+    int age;
+
+    void display() {       // member function (method)
+        cout << name << " " << age;
+    }
+};
+
+// ❗ IS THERE ANY DIFFERENCE BETWEEN METHOD & MEMBER FUNCTION?
+// ✔ In C++ → NO DIFFERENCE
+// Word	Meaning
+// Method	Function inside a class
+// Member Function	Function inside a class
+// ⚠️ They are synonyms in C++ OOPs
+// (Java officially uses "method", C++ books use "member function")
+// 🏷️ QUICK COMPARISON TABLE
+// Feature	Data Member	Member Function (Method)
+// Definition	Variable inside class	Function inside class
+// Stores	Data (values)	Behavior (logic)
+// Access	Using object	Using object
+// Memory	Allocated per object	Stored once in code segment
+// Example	int age;	void printAge()
+// 🧪 Full Example
+
+#include <iostream>
+using namespace std;
+
+class Car {
+public:
+    // 🟢 DATA MEMBERS
+    string brand;
+    int speed;
+
+    // 🔵 MEMBER FUNCTION (METHOD)
+    void accelerate() {
+        speed += 10;
+        cout << "Speed: " << speed << endl;
+    }
+};
+
+int main() {
+    Car c1;              // object
+    c1.brand = "BMW";    // accessing data member
+    c1.speed = 100;
+
+    c1.accelerate();     // calling method
+}
+
+// 🧠 INTERVIEW NOTES
+// Q1: What are data members?
+// ➡ Variables defined inside a class (store object data)
+// Q2: What are member functions?
+// ➡ Functions defined inside a class that operate on data members
+// Q3: Difference between method & member function?
+// ➡ No difference in C++. Same meaning.
+// ⭐ MEMORY FACT
+// ✔ Data members → stored separately for each object
+// ✔ Member functions → stored once in code memory
