@@ -8,7 +8,7 @@
 // ✅ Access Specifiers (C++)
 // These define the visibility scope of class members.
 // private → accessible only inside the class
-// protected → accessible inside class + derived class
+// protected → accessible inside class(base class or parent class) + derived class
 // public → accessible from anywhere
 // Purpose: Controls who can access the data.
 // Example:

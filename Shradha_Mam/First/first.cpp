@@ -15,18 +15,20 @@
 // It defines:
 // properties (fields/data/attributes)
 // behaviors (methods/functions)
+// A class is NOT the real object.
+// It only describes what the object will be like.
+
 // ✅ Real-World Example (Easy)
 // Think of a blueprint of a house.
 // It shows number of rooms, windows, doors → properties
 // It shows how electricity, water system works → behaviors
-// But the blueprint is not the real house.
 // Similarly:
-// A class is NOT the real object.
-// It only describes what the object will be like.
+// But the blueprint is not the real house.
 
 // ✅ 2. What is an Object?
 // ✅ Simple Definition
 // An object is an instance of a class.
+// It is the real entity created from the class blueprint.
 // It is the real thing created using the class blueprint.
 // An object has:
 // state (data) → values of properties
@@ -42,7 +44,21 @@
 #include<string>
 using namespace std;
 class Teacher{
+// access modifiers control who can use the data members and functions of a class.
+// They are mainly used to achieve data hiding, security, and proper design.
   // access specifier 
+//   Meaning of Each Access Modifier
+// Access Modifier	       Who can access it?
+// public	               Anywhere (inside & outside the class)
+// private	               Only inside the same class
+// protected               →  Inside the base (parent) class + derived (child) classes
+
+// Why do we use them?
+// Security – Prevent direct access to sensitive data
+// Encapsulation – Hide internal implementation details
+// Control – Allow access only through methods
+// Maintainability – Change internal logic without breaking outside code
+
   private:
   double salary;
 public:
@@ -138,7 +154,48 @@ int main() {
     c1.accelerate();     // calling method
 }
 
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Car{
+  public:
+  int brand;
+  int price;
+  void accelerator(){
+      cout<<brand<<" "<<price;
+  }
+  void solve(int brand,int price){
+      cout<<brand<<" "<<price;
+  }
+};
+int main() {
+    // Write C++ code here
+    Car c1;
+    c1.brand=10;
+    c1.price=200000;
+    c1.accelerator();
+    cout<<endl;
+    c1.solve(20,456000);
+    return 0;
+}
+
 // 🧠 INTERVIEW NOTES
+// A variable is a name given to a memory location that is used to store data temporarily during program execution.
+// The value of a variable can change while the program runs.
+// Think of it like a container that holds some data.
+
+// 🐍 Variables in Python
+// In Python, you don’t need to declare the data type.
+// Python automatically decides the type based on the value.
+// Python is dynamically typed
+// You can change the type of a variable anytime:
+
+// 💻 Variables in C++
+// In C++, you must declare the data type before using a variable.
+// C++ is statically typed
+// Once declared, the type cannot change
+
 // Q1: What are data members?
 // ➡ Variables defined inside a class (store object data)
 // Q2: What are member functions?
