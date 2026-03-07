@@ -6,6 +6,25 @@
 
 // ✅ C++ Abstract Class Example
 
+// 🔹 What does “instantiated” mean (in simple words)?
+// Instantiated = Creating an object of a class.
+
+// In simple terms:
+// When you write ClassName obj;
+// you are instantiating the class.
+
+class Car {
+public:
+    void start() {
+        cout << "Car Started";
+    }
+};
+
+int main() {
+    Car c1;   // ✅ This is instantiation
+}
+
+
 
 #include <bits/stdc++.h>
 using namespace std;

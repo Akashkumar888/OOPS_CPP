@@ -1,7 +1,6 @@
 // ✅ What is a Constructor? (Interview-Ready Answer)
 // A constructor is a special function inside a class that is called automatically when an object is created.
 // Its purpose is to initialize data members.
-
 // It has same name as the class
 // It has no return type (not even void)
 // Called automatically

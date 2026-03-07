@@ -11,6 +11,42 @@
 #include <iostream>
 using namespace std;
 
+// Abstract class
+class Vehicle {
+public:
+    // Abstract method
+    virtual void start() = 0;
+
+    // Concrete method
+    void fuelType() {
+        cout << "Uses fuel or electricity" << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void start() {
+        cout << "Car starts with key or button" << endl;
+    }
+};
+
+int main() {
+    Vehicle* v;
+    Car c;
+
+    v = &c;
+    v->start();      // runtime polymorphism
+    v->fuelType();  // concrete method
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+
 class Animal {
 public:
     virtual void sound() = 0;    // pure virtual → abstract class

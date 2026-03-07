@@ -1,45 +1,41 @@
-
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Parent{
- public:
- string name;
- int age;
- Parent(string name,int age){
-  this->name=name;
-  this->age=age;
-  cout<<"Parent Constructor called"<<endl;
- }
- void getParent(){
-  cout<<"Name: "<<name<<endl;
-  cout<<"Age: "<<age<<endl;
- }
-};
+class Vehicle {
+public:
+    int wheels;
+    string brand;
 
-class Child:public Parent{
- public:
- int rollno;
-// Correct: call Parent's constructor
-    Child(string name, int age, int rollno) : Parent(name, age) {
-        this->rollno = rollno;
-        cout << "Child Constructor called" << endl;
+    Vehicle(int w, string b) {
+        wheels = w;
+        brand = b;
     }
 
-
-  void getChild(){
-  cout<<"Name: "<<name<<endl;
-  cout<<"Age: "<<age<<endl;
-  cout<<"Roll Number: "<<rollno<<endl;
- }
+    void showVehicle() {
+        cout << "Brand: " << brand << endl;
+        cout << "Wheels: " << wheels << endl;
+    }
 };
 
+class Car : public Vehicle {
+public:
+    string model;
 
-int main()
-{
- Child c1("Ankit",22,2201092);
- c1.getChild();
+    Car(int w, string b, string m) : Vehicle(w, b) {
+        model = m;
+    }
 
-return 0;
+    void showCar() {
+        
+        cout << "Model: " << model << endl;
+    }
+};
+
+int main() {
+
+    Car c(4, "Toyota", "Fortuner");
+    c.showVehicle(); // inherited method // parent class methods
+    c.showCar();// child class methods
+
+    return 0;
 }
-

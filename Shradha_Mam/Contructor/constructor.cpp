@@ -1,22 +1,24 @@
 // ✅ What is a Constructor? (Interview-Ready Answer)
 // A constructor is a special function inside a class that is called automatically when an object is created.
 // Its purpose is to initialize data members.
-
 // It has same name as the class
 // It has no return type (not even void)
 // Called automatically
 
+
 // ✅ Types of Constructors in C++
-// Default / Non-parameterized constructor
-// Parameterized constructor
-// Copy constructor
-// (Bonus) Constructor Overloading
+//1. Default / Non-parameterized constructor
+//2. Parameterized constructor
+//3. Copy constructor
+//4. (Bonus) Constructor Overloading
+
 
 // ✅ ✅ 1. Default / Non-Parameterized Constructor
 // Called automatically when you create an object without arguments.
 
 // ✅ Rule:
 // If you don’t write any constructor, C++ provides its own default constructor.
+// If you define any constructor, C++ will not provide the default one automatically.
 
 
 #include<iostream>
@@ -34,7 +36,7 @@ using namespace std;
         b=y;
     }
     Rectangle(Rectangle& r){//copy constructor intialize an object by another exit object
-    l=r.l;
+    l=r.l;                 //Used to create a new object as a copy of an existing object:
     b=r.b;
     }
     };
@@ -47,3 +49,13 @@ int main(){
     cout<<r3.l<<" "<<r3.b<<endl;
     return 0;
 }
+
+// 4️⃣ Constructor Overloading (Bonus)
+// You have three constructors with the same name Rectangle but different parameters:
+// Rectangle()
+// Rectangle(int, int)
+// Rectangle(Rectangle&)
+
+// This is called Constructor Overloading.
+// Interview Line:
+// “Constructor overloading allows multiple constructors in a class with different parameter lists to initialize objects in different ways.”

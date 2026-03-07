@@ -2,6 +2,14 @@
 // ✅ ✅ 3. Copy Constructor
 // Creates a new object by copying another object.
 
+// Interview Line:
+// “A copy constructor is used to initialize a new object using an already existing object of the same class.”
+// When copy constructor is called automatically:
+// When passing object by value
+// When returning object from a function
+// When creating object from another object
+
+
 #include <iostream>
 using namespace std;
 

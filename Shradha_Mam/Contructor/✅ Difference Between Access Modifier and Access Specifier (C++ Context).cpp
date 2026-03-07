@@ -13,6 +13,37 @@
 // Purpose: Controls who can access the data.
 // Example:
 
+
+// 🔹 Data Members / Properties / Variables
+// All refer to data stored inside a class.
+// Example:
+
+// class Student {
+//     int age;     // data member / property / variable
+// };
+
+// In C++ → usually called data members
+// In general OOP → called properties
+// Technically → they are variables inside a class
+
+// 🔹 Methods / Functions / Behaviours
+// All refer to actions a class can perform.
+
+// class Student {
+// public:
+//     void study() {   // method / function / behaviour
+//         cout << "Studying";
+//     }
+// };
+
+// In C++ → called member functions
+// In OOP theory → called methods
+// Conceptually → represent behaviour
+
+// 🔹 Interview-Level Answer (Short & Smart)
+// Data members (or properties) store state, and methods (or functions) define behavior.
+// Together they form the structure of an object in OOP.
+
 class A {
 private:
     int x;
