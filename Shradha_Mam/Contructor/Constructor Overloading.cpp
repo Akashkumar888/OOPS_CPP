@@ -188,3 +188,106 @@ public:
 // “Constructor overloading allows a class to have multiple constructors with different parameter lists, enabling objects to be initialized in different ways.”
 // “Constructors cannot be overridden because they are not inherited, but they can be overloaded within the same class.”
 // “Constructor overloading is similar to method overloading, except the constructor name is always the class name and it has no return type.”
+
+
+// 🔷 Can we overload constructors in a class?
+// 👉 Simple Answer
+// ✅ Yes, we can overload constructors in a class.
+// 🔷 What is Constructor Overloading?
+// 👉 Definition
+// Constructor overloading means having multiple constructors in the same class with:
+
+// Different number of parameters, or
+// Different types of parameters
+// 💡 Key Idea
+// 👉 Same constructor name (class name)
+// 👉 Different parameter list
+
+// 💡 Interview Line (Best Answer)
+// Constructor overloading is a feature where a class can have multiple constructors with different parameter lists to initialize objects in different ways.
+
+// 🔷 Why do we use Constructor Overloading?
+// 👉 To initialize objects in different ways
+
+// 💡 Example Situations
+// Create object with:
+// No values
+// One value
+// Multiple values
+
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    // 1. Default constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    // 2. Parameterized constructor (one parameter)
+    Student(string n) {
+        name = n;
+        age = 0;
+    }
+
+    // 3. Parameterized constructor (two parameters)
+    Student(string n, int a) {
+        name = n;
+        age = a;
+    }
+};
+
+int main() {
+    Student s1;                // default
+    Student s2("Rahul");       // one parameter
+    Student s3("Aman", 20);    // two parameters
+
+    cout << s1.name << " " << s1.age << endl;
+    cout << s2.name << " " << s2.age << endl;
+    cout << s3.name << " " << s3.age << endl;
+}
+
+// ✔ Output
+// Unknown 0
+// Rahul 0
+// Aman 20
+// 🔷 How does it work?
+// 👉 The compiler decides which constructor to call based on:
+
+// Number of arguments
+// Type of arguments
+
+// 👉 This is called Compile-Time Polymorphism
+// 🔷 Important Points
+// Constructors have same name as class
+// Must differ in parameter list
+// Cannot differ only by return type
+// Helps in flexible object creation
+// 🔷 Example (Java – Interview Friendly)
+
+class Student {
+    String name;
+    int age;
+
+    Student() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    Student(String n) {
+        name = n;
+    }
+
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+}
+
+// 🔥 Final Interview Summary
+// Yes, constructors can be overloaded by defining multiple constructors with different parameter lists. It helps in creating objects in different ways and is an example of compile-time polymorphism.

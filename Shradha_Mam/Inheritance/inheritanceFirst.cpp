@@ -1,4 +1,9 @@
 
+// The idea of inheritance is simple, a class is derived from another class and uses data and implementation of that other class. The class which is derived is called child or derived or subclass and the class from which the child class is derived is called parent or base or superclass.
+
+// The main purpose of Inheritance is to increase code reusability. It is also used to achieve Runtime Polymorphism.
+
+
 // Online C++ compiler to run C++ program online
 // Inheritance is the process of inheriting properties from a Base / Parent / Super class into a Derived / Child / Sub class.
 

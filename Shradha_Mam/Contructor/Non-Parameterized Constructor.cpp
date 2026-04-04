@@ -59,3 +59,28 @@ int main() {
 
 // ✅ Interview Line:
 // “Creating any constructor (default or parameterized) blocks C++ from generating the compiler-provided default constructor.”
+
+
+// 🔶 2. Non-Parameterized Constructor
+// 👉 Definition
+// A non-parameterized constructor is a constructor defined by the programmer that does not take any arguments.
+// 💡 Key Idea
+// 👉 Same as default, but user-defined
+// ✔ Example
+
+#include <iostream>
+using namespace std;
+
+class Demo {
+public:
+    Demo() {
+        cout << "Non-parameterized constructor";
+    }
+};
+
+int main() {
+    Demo d;
+}
+
+// ✔ Output
+// Non-parameterized constructor

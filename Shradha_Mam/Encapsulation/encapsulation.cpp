@@ -56,3 +56,10 @@ int main() {
 
     return 0;
 }
+
+
+// Encapsulation is the binding of data and methods that manipulate them into a single unit such that the sensitive data is hidden from the users
+// It is implemented as the processes mentioned below:
+
+// Data hiding: A language feature to restrict access to members of an object. For example, private and protected members in C++.
+// Bundling of data and methods together: Data and methods that operate on that data are bundled together. For example, the data members and member methods that operate on them are wrapped into a single unit known as a class.
