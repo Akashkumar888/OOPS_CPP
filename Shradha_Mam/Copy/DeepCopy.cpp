@@ -21,9 +21,10 @@ public:
         // Heap memory created for integer
         // data (pointer) is stored in stack
         // data points to heap memory
+        cout << "Constructor called"<<endl;
     }
 
-    // ✅ Deep Copy Constructor
+    // ✅ Deep Copy Constructor , here copy constructor happen
     Demo(const Demo& obj) {
         data = new int(*obj.data);  // allocate new memory and copy value
     }

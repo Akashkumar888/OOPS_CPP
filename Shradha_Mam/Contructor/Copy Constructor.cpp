@@ -10,6 +10,35 @@
 // When creating object from another object
 
 
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Student{
+  public:
+  int age;
+  Student(int age){
+      this->age=age;
+      cout<<"Parameterised Constructor"<<endl;
+  }
+  // copy constructor
+  Student(const Student &s){
+      this->age=s.age;
+      cout<<"Copy constrctor"<<endl;
+  }
+};
+int main() {
+    // Write C++ code here
+    Student s1(20);
+    cout<<s1.age<<endl;
+    Student s2=s1;
+    // This is initialization, not assignment
+    // So copy constructor is invoked
+    cout<<s2.age<<endl;
+    return 0;
+}
+
+
+
 #include <iostream>
 using namespace std;
 
@@ -34,3 +63,5 @@ int main() {
     cout << s2.age << endl;
     return 0;
 }
+
+

@@ -47,15 +47,16 @@ int main() {
 using namespace std;
 
 class Animal {
-public:
-    virtual void sound() {                // virtual = runtime polymorphism
+public: // first virtual in parent 
+    virtual void sound() {  // virtual keyoword use in parent class because  A virtual function is a function that is used to override a method of the parent class in the derived class. It is used to provide abstraction in a class.
+    // virtual = runtime polymorphism
         cout << "Animal sound\n";
     }
 };
 
 class Dog : public Animal {
 public:
-    void sound() override {
+    void sound() override { // second in base class override 
         cout << "Dog barks\n";
     }
 };

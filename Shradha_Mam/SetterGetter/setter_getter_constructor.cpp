@@ -1,5 +1,23 @@
 
 
+// ✅ What are Getters and Setters? (Interview Answer)
+// Getter and Setter functions are used to access and modify private data members of a class.
+// Setter → writes/updates the private variable
+// Getter → reads/returns the private variable
+// They are required because private members cannot be accessed directly from outside the class.
+
+// ✅ Why do we use Getters and Setters? (Interview-Ready)
+// You should say this:
+// To protect private data (encapsulation).
+// To provide controlled access (validation can be added).
+// To ensure data hiding, so object’s internal data cannot be misused.
+// To maintain security (especially for fields like password, balance, salary).
+// This is the exact reason your class uses them for salary.
+
+// ✅ How Getters and Setters Work Internally
+// Setter
+// Takes a value from outside
+// Stores it in the private variable
 
 // 🔹 Why Do We Use Getter and Setter in OOPS?
 // Getter and Setter are used to implement Encapsulation (data hiding).

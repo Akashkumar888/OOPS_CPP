@@ -22,13 +22,23 @@ using namespace std;
 
 class A {
 public:
-void show() { cout << "Class A" << endl; }
+void show() { 
+    cout << "Class A" << endl; 
+}
 };
 
 
-class B : public A {}; // B inherits A
-class C : public A {}; // C inherits A
-class D : public B, public C {}; // D inherits B and C
+class B : public A {
+
+}; // B inherits A
+
+class C : public A {
+
+}; // C inherits A
+
+class D : public B, public C {
+
+}; // D inherits B and C
 
 
 int main() {
@@ -54,16 +64,25 @@ obj.C::show();
 #include <iostream>
 using namespace std;
 
-
 class A {
 public:
-void show() { cout << "Class A" << endl; }
+void show() { 
+    cout << "Class A" << endl;
+ }
 };
 
 
-class B : virtual public A {}; // virtual inheritance
-class C : virtual public A {}; // virtual inheritance
-class D : public B, public C {}; // Only one A now
+class B : virtual public A {
+
+}; // virtual inheritance
+
+class C : virtual public A {
+
+}; // virtual inheritance
+
+class D : public B, public C {
+
+}; // Only one A now
 
 
 int main() {

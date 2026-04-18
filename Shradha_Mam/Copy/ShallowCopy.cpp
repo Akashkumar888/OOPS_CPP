@@ -22,6 +22,7 @@ public:
         // data (pointer) is stored in stack
         // data points to heap memory
         data = new int(value);
+        cout << "Constructor called"<<endl;
     }
 
     // Destructor
