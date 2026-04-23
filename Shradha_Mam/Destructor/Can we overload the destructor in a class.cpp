@@ -3,7 +3,7 @@
 // 👉 Simple Answer
 
 // ❌ No, a destructor cannot be overloaded in a class.
-// 👉 There can be only one destructor in a class.
+// 👉 There can be only one (1) destructor in a class.
 
 // 🔷 What is a Destructor?
 // 👉 Definition

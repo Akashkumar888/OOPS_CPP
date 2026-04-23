@@ -25,6 +25,24 @@
 // Encapsulation means:
 // Keep data private and allow controlled access through functions.
 
+// 🔥 Correct Concept (VERY IMPORTANT)
+// 🔹 Setter
+// Used to set/update value
+// Usually returns void
+// Can take one or multiple parameters
+// void setSalary(double sal)
+
+// 🔹 Getter
+// Used to retrieve value
+// Returns value (not void)
+// double getSalary()
+
+// 🔥 Correct Table
+// Function	           Purpose	                    Return Type
+// Setter	           Set value	                Usually void
+// Getter	           Get value	                Same as variable type
+
+
 #include <iostream>
 using namespace std;
 
@@ -160,3 +178,207 @@ int main()
 return 0;
 }
 
+
+// 🔥 Multiple Parameters Setter (YES, possible)
+
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Setter (set both values)
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // Getter for name
+    string getName() {
+        return name;
+    }
+
+    // Getter for age
+    int getAge() {
+        return age;
+    }
+};
+
+int main() {
+    Student s1;   // object created
+
+    // setting values
+    s1.setData("Akash", 21);
+
+    // getting values
+    cout << "Name: " << s1.getName() << endl;
+    cout << "Age: " << s1.getAge() << endl;
+
+    return 0;
+}
+
+// 🔥 Getter for Multiple Values?
+// 👉 You cannot return multiple values directly
+// But you can:
+// Option 1: Call multiple getters
+
+cout << obj.getName() << " " << obj.getAge();
+
+// Option 2: Use struct (advanced)
+struct Info {
+    string name;
+    int age;
+};
+
+Info getData() {
+    return {name, age};
+}
+
+
+// 🔥 Why Getters/Setters (INTERVIEW GOLD)
+// Say this:
+// “Getters and setters are used to implement encapsulation by restricting direct access to data and allowing controlled access with validation.”
+
+
+// ❌ A function can return only one value (in basic C++)
+// ✅ But we CAN return multiple values using techniques:
+
+// “When we need to return multiple values in C++, we typically use a struct, class, pair, tuple, or reference parameters, depending on the situation.”
+
+// Use:
+// - struct / class → for meaningful grouped data (best)
+// - pair → for 2 values
+// - tuple → for multiple values (3+)
+// - reference parameters → for in-place output
+
+
+// 🔥 2. When to Use What (VERY IMPORTANT ⭐)
+// 🔹 ✅ Use struct / class (BEST PRACTICE)
+
+// 👉 When values are related logically
+
+// struct StudentInfo {
+//     string name;
+//     int age;
+// };
+
+// ✔ Readable
+// ✔ Maintainable
+// ✔ Interview-friendly
+
+// 🔹 Method 1: Return struct (BEST & INTERVIEW-FRIENDLY ⭐)
+
+#include <iostream>
+using namespace std;
+
+struct Info {
+    string name;
+    int age;
+};
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    Info getData() {   // returning struct
+        return {name, age};
+    }
+};
+
+int main() {
+    Student s1;
+    s1.setData("Akash", 21);
+
+    Info data = s1.getData();
+
+    cout << "Name: " << data.name << endl;
+    cout << "Age: " << data.age << endl;
+}
+
+
+
+
+// using class 
+#include <iostream>
+using namespace std;
+
+// Using class instead of struct
+class Info {
+public:
+    string name;
+    int age;
+};
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    Info getData() {
+        Info obj;
+        obj.name = name;
+        obj.age = age;
+        return obj;
+    }
+};
+
+
+int main() {
+    Student s1;
+    s1.setData("Akash", 21);
+
+    Info d = s1.getData();
+
+    cout << d.name << " " << d.age;
+}
+
+
+// 🔹 Method 2: Use pair (short way)
+#include <utility>
+
+pair<string, int> getData() {
+    return {name, age};
+}
+
+// Usage:
+
+auto p = s1.getData();
+cout << p.first << " " << p.second;
+
+
+// 🔹 Method 3: Use Reference Parameters
+
+void getData(string &n, int &a) {
+    n = name;
+    a = age;
+}
+
+// Usage:
+
+string n;
+int a;
+s1.getData(n, a);
+
+// 👉 “Can getter return multiple values?”
+// Say:
+// “A function can return only one value, but we can return multiple values using a struct, pair, or reference parameters.”
+
+// 👉 “Are getters/setters only for private?”
+// Say:
+// “They are mainly used for private and protected members to provide controlled access and maintain encapsulation.”
